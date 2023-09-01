@@ -22,7 +22,8 @@ dotenv.config();
 require("./Configs/dbconfig");
 
 
-HTTPServer.listen(PORT, "localhost", (request,response,next)=>{
-    console.log("Server Started!");
+HTTPServer.listen(PORT, "0.0.0.0", (err)=>{
+    if(err) throw err;
+    console.log(`listening to port ${PORT}`);
 });
 
